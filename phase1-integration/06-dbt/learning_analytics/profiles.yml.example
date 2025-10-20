@@ -1,0 +1,15 @@
+# profiles.yml のサンプル
+# 実際の設定は ~/.dbt/profiles.yml に配置してください
+# このファイルは参考用です
+
+learning_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: YOUR_PROJECT_ID  # ← 自分のプロジェクトIDに変更
+      dataset: learning_dev
+      location: asia-northeast1
+      threads: 4
+      timeout_seconds: 300

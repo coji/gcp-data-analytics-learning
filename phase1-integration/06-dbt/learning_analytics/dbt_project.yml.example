@@ -1,0 +1,29 @@
+# dbt_project.yml のサンプル
+# 実際に使用する際は、このファイルを dbt_project.yml にリネームして使用してください
+
+name: 'learning_analytics'
+version: '1.0.0'
+config-version: 2
+
+profile: 'learning_analytics'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  learning_analytics:
+    staging:
+      +materialized: view
+      +schema: staging
+    marts:
+      +materialized: table
+      +schema: marts

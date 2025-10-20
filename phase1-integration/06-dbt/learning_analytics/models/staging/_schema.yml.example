@@ -1,0 +1,69 @@
+# dbt schema定義（テスト含む）
+# 実際に使用する際は、このファイルを _schema.yml にリネームして使用してください
+
+version: 2
+
+models:
+  - name: stg_events
+    description: "標準化されたイベントデータ"
+    columns:
+      - name: event_id
+        description: "イベントID（主キー）"
+        tests:
+          - unique
+          - not_null
+
+      - name: event_date
+        description: "イベント発生日"
+        tests:
+          - not_null
+
+      - name: event_type
+        description: "イベント種別"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['product', 'cart', 'purchase', 'cancel', 'home', 'department']
+
+      - name: traffic_source
+        description: "流入元"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Email', 'Adwords', 'YouTube', 'Facebook', 'Organic', 'Display']
+
+      - name: session_id
+        description: "セッションID"
+        tests:
+          - not_null
+
+  - name: stg_orders
+    description: "標準化された注文データ"
+    columns:
+      - name: order_id
+        description: "注文ID（主キー）"
+        tests:
+          - unique
+          - not_null
+
+      - name: user_id
+        description: "ユーザーID"
+        tests:
+          - not_null
+
+      - name: order_date
+        description: "注文日"
+        tests:
+          - not_null
+
+      - name: status
+        description: "注文ステータス"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Complete', 'Cancelled', 'Processing', 'Shipped', 'Returned']
+
+      - name: is_completed
+        description: "注文完了フラグ"
+        tests:
+          - not_null

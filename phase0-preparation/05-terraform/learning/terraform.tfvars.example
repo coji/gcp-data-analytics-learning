@@ -1,0 +1,8 @@
+# 変数の実際の値を設定するファイルのサンプル
+# 実際に使用する際は、このファイルを terraform.tfvars にリネームして使用してください
+# 注意: terraform.tfvars は .gitignore に含まれています
+
+project_id  = "YOUR_PROJECT_ID"
+dataset_id  = "terraform_learning_test"
+location    = "asia-northeast1"
+environment = "learning"

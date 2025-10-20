@@ -1,0 +1,96 @@
+# GCP Credentials and Keys
+*.json
+!*-schema.json
+*-key.json
+credentials.*
+service-account-*.json
+
+# Terraform
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate.d/
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# dbt
+phase1-integration/06-dbt/learning_analytics/target/
+phase1-integration/06-dbt/learning_analytics/dbt_packages/
+phase1-integration/06-dbt/learning_analytics/logs/
+phase1-integration/06-dbt/learning_analytics/profiles.yml
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE and Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Node.js (if using any JS tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Backup files
+*.bak
+*.backup
+*.tmp
+
+# Compiled files
+*.class
+*.o
+*.pyc
+
+# Secrets and sensitive data
+secrets/
+private/
+.secret
+*.pem
+*.key
+*.p12
+
+# BigQuery temporary files
+bq-results-*.csv
+
+# Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Test data (large files)
+*.parquet
+*.csv
+!example-*.csv
+
+# Personal notes that shouldn't be shared
+personal-notes.md
+scratch.md

@@ -1,0 +1,69 @@
+# dbt sources定義のサンプル
+# 実際に使用する際は、このファイルを _sources.yml にリネームして使用してください
+
+version: 2
+
+sources:
+  # BigQuery公開データセット: thelook_ecommerce
+  - name: thelook_public
+    database: bigquery-public-data
+    schema: thelook_ecommerce
+    description: "Eコマースサンプルデータ（BigQuery公開データセット）"
+    tables:
+      - name: events
+        description: "ユーザー行動イベント（product閲覧、cart追加、purchase等）"
+        columns:
+          - name: id
+            description: "イベントID"
+          - name: user_id
+            description: "ユーザーID"
+          - name: session_id
+            description: "セッションID"
+          - name: created_at
+            description: "イベント発生日時"
+          - name: event_type
+            description: "イベント種別（product, cart, purchase, cancel等）"
+          - name: traffic_source
+            description: "流入元（Email, Adwords, YouTube, Facebook等）"
+
+      - name: orders
+        description: "注文データ"
+        columns:
+          - name: order_id
+            description: "注文ID"
+          - name: user_id
+            description: "ユーザーID"
+          - name: status
+            description: "注文ステータス"
+          - name: created_at
+            description: "注文日時"
+
+      - name: order_items
+        description: "注文明細"
+        columns:
+          - name: id
+            description: "明細ID"
+          - name: order_id
+            description: "注文ID"
+          - name: product_id
+            description: "商品ID"
+          - name: sale_price
+            description: "販売価格"
+
+  # 自分のプロジェクトにコピーしたデータ
+  - name: learning_raw
+    database: YOUR_PROJECT_ID  # ← 自分のプロジェクトIDに変更
+    schema: learning_dev
+    description: "学習用データ（thelook_ecommerceからコピー）"
+    tables:
+      - name: events
+        description: "イベントデータ（2024年1月分）"
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 48, period: hour}
+
+      - name: orders
+        description: "注文データ（2024年1月分）"
+
+      - name: order_items
+        description: "注文明細（2024年1月分）"

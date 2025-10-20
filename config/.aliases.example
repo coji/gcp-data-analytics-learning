@@ -1,0 +1,67 @@
+# GCP学習用のエイリアス設定
+#
+# このファイルを ~/.bashrc または ~/.zshrc に追加すると便利です
+#
+# 使い方:
+#   1. このファイルの内容を ~/.bashrc または ~/.zshrc にコピー
+#   2. ターミナルを再起動または source ~/.bashrc を実行
+#   3. エイリアスを使用（例: gcloud-learning）
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# gcloud configuration切り替え
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# 学習用に切り替え
+alias gcloud-learning='gcloud config configurations activate learning-gcp && gcloud config list'
+
+# クライアントAに切り替え（必要に応じて追加）
+# alias gcloud-client-a='gcloud config configurations activate client-a && gcloud config list'
+
+# クライアントBに切り替え（必要に応じて追加）
+# alias gcloud-client-b='gcloud config configurations activate client-b && gcloud config list'
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 現在の設定確認
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# 現在のgcloud設定を表示
+alias gcloud-current='gcloud config list'
+
+# すべてのconfiguration一覧
+alias gcloud-list='gcloud config configurations list'
+
+# アクティブなアカウントを確認
+alias gcloud-whoami='gcloud config get-value account'
+
+# アクティブなプロジェクトを確認
+alias gcloud-project='gcloud config get-value project'
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# BigQuery便利コマンド
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# 現在のプロジェクトのデータセット一覧
+alias bq-datasets='bq ls'
+
+# learning_devデータセットのテーブル一覧
+alias bq-learning='bq ls $(gcloud config get-value project):learning_dev'
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 学習用クイックスタート
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# 学習用ディレクトリに移動（パスは適宜変更）
+# alias cdgcp='cd ~/path/to/gcloud'
+
+# 学習用設定に切り替えてセットアップ（リポジトリのルートディレクトリで実行）
+# alias gcp-setup='gcloud-learning && ./scripts/setup-learning-data.sh'
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 使用例
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#
+# $ gcloud-learning        # 学習用に切り替え
+# $ gcloud-current         # 現在の設定確認
+# $ gcloud-list            # すべてのconfiguration確認
+# $ bq-learning            # learning_devのテーブル一覧
+#

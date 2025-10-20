@@ -1,0 +1,79 @@
+-- Mart Layer: 流入元別パフォーマンス分析
+-- 実際に使用する際は、このファイルを mart_traffic_source_performance.sql にリネームして使用してください
+
+{{
+  config(
+    materialized='table',
+    partition_by={
+      'field': 'date',
+      'data_type': 'date'
+    },
+    cluster_by=['traffic_source']
+  )
+}}
+
+WITH events_agg AS (
+  SELECT
+    event_date AS date,
+    traffic_source,
+    COUNT(DISTINCT session_id) AS sessions,
+    COUNT(DISTINCT user_id) AS unique_users,
+    COUNT(CASE WHEN event_type = 'product' THEN 1 END) AS product_views,
+    COUNT(CASE WHEN event_type = 'cart' THEN 1 END) AS add_to_carts,
+    COUNT(CASE WHEN event_type = 'purchase' THEN 1 END) AS purchases,
+    COUNT(CASE WHEN event_type = 'cancel' THEN 1 END) AS cancels
+  FROM {{ ref('stg_events') }}
+  GROUP BY date, traffic_source
+),
+
+orders_agg AS (
+  SELECT
+    order_date AS date,
+    -- eventsテーブルとJOINして流入元を取得
+    e.traffic_source,
+    COUNT(DISTINCT o.order_id) AS completed_orders,
+    SUM(oi.sale_price) AS revenue
+  FROM {{ ref('stg_orders') }} o
+  INNER JOIN {{ source('thelook_public', 'order_items') }} oi
+    ON o.order_id = oi.order_id
+  LEFT JOIN {{ ref('stg_events') }} e
+    ON o.user_id = e.user_id
+    AND o.order_date = e.event_date
+    AND e.event_type = 'purchase'
+  WHERE o.is_completed = TRUE
+  GROUP BY date, traffic_source
+),
+
+final AS (
+  SELECT
+    e.date,
+    e.traffic_source,
+
+    -- イベント指標
+    e.sessions,
+    e.unique_users,
+    e.product_views,
+    e.add_to_carts,
+    e.purchases,
+    e.cancels,
+
+    -- 注文指標
+    COALESCE(o.completed_orders, 0) AS completed_orders,
+    COALESCE(o.revenue, 0) AS revenue,
+
+    -- 計算指標
+    SAFE_DIVIDE(e.purchases, e.sessions) AS cvr,
+    SAFE_DIVIDE(e.add_to_carts, e.product_views) AS atc_rate,
+    SAFE_DIVIDE(e.purchases, e.add_to_carts) AS cart_to_purchase_rate,
+    SAFE_DIVIDE(o.revenue, e.sessions) AS revenue_per_session,
+    SAFE_DIVIDE(o.revenue, e.unique_users) AS revenue_per_user,
+    SAFE_DIVIDE(o.revenue, COALESCE(o.completed_orders, 1)) AS average_order_value
+
+  FROM events_agg e
+  LEFT JOIN orders_agg o
+    ON e.date = o.date
+    AND e.traffic_source = o.traffic_source
+)
+
+SELECT * FROM final
+ORDER BY date DESC, revenue DESC

@@ -1,0 +1,46 @@
+-- Staging Layer: ordersテーブルの標準化
+
+{{
+  config(
+    materialized='view'
+  )
+}}
+
+WITH source AS (
+  SELECT *
+  FROM {{ source('thelook_public', 'orders') }}
+  WHERE created_at >= '2024-01-01'
+),
+
+renamed AS (
+  SELECT
+    -- 主キー
+    order_id,
+
+    -- 外部キー
+    user_id,
+
+    -- 注文属性
+    status,
+    gender,
+
+    -- 日時
+    created_at AS order_timestamp,
+    DATE(created_at) AS order_date,
+    shipped_at AS shipped_timestamp,
+    delivered_at AS delivered_timestamp,
+    returned_at AS returned_timestamp,
+
+    -- 集計
+    num_of_item,
+
+    -- 注文完了フラグ（分析で頻繁に使用）
+    CASE
+      WHEN status = 'Complete' THEN TRUE
+      ELSE FALSE
+    END AS is_completed
+
+  FROM source
+)
+
+SELECT * FROM renamed

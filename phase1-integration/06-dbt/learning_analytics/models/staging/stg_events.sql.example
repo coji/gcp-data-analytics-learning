@@ -1,0 +1,48 @@
+-- Staging Layer: eventsテーブルの標準化
+-- 実際に使用する際は、このファイルを stg_events.sql にリネームして使用してください
+
+{{
+  config(
+    materialized='view'
+  )
+}}
+
+WITH source AS (
+  SELECT *
+  FROM {{ source('thelook_public', 'events') }}
+  WHERE created_at >= '2024-01-01'
+),
+
+renamed AS (
+  SELECT
+    -- 主キー
+    id AS event_id,
+
+    -- 外部キー
+    user_id,
+    session_id,
+
+    -- 日時
+    created_at AS event_timestamp,
+    DATE(created_at) AS event_date,
+
+    -- イベント属性
+    event_type,
+    traffic_source,
+
+    -- ユーザー属性
+    browser,
+
+    -- 地理情報
+    city,
+    state,
+    postal_code,
+    country,
+
+    -- その他
+    uri
+
+  FROM source
+)
+
+SELECT * FROM renamed
