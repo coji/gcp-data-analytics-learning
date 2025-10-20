@@ -96,3 +96,5 @@ Desktop.ini
 # Personal notes that shouldn't be shared
 personal-notes.md
 scratch.md
+learning-log/*.md
+!learning-log/*.md.example
