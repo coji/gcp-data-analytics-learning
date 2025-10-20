@@ -1,6 +1,7 @@
 # GCP Credentials and Keys
 *.json
 !*-schema.json
+!.markdownlint.json
 *-key.json
 credentials.*
 service-account-*.json
