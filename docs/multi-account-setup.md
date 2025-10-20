@@ -163,6 +163,7 @@ gcloud config list
 ```
 
 このスクリプトは：
+
 - `learning-gcp` configurationが存在するか確認
 - 存在しない場合は作成を提案
 - 設定を切り替えて現在の状態を表示

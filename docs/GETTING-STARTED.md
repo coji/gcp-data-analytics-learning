@@ -15,6 +15,7 @@
 ```
 
 学習モードでは：
+
 - 詳細な概念説明
 - 段階的な学習サポート
 - ハンズオン演習の丁寧なガイド
@@ -33,6 +34,7 @@ bq --version
 ```
 
 インストールされていない場合：
+
 ```bash
 # macOS
 brew install --cask google-cloud-sdk
@@ -88,6 +90,7 @@ gcloud config list
 ```
 
 このスクリプトは：
+
 - BigQuery公開データセット（`thelook_ecommerce`）にクエリ実行
 - 流入元別のセッション数を集計
 - イベントタイプ別の集計を実行
@@ -100,6 +103,7 @@ gcloud config list
 ```
 
 このスクリプトは：
+
 - `learning_dev` データセットを作成
 - 2024年1月のデータをコピー（events, orders, order_items, users, products）
 - パーティション分割版のテーブルも作成
@@ -118,6 +122,7 @@ Phase 0-01 から学習を開始したいです。
 ```
 
 Claude は：
+
 - 各概念を段階的に説明
 - ハンズオン演習を丁寧にガイド
 - コマンドの意味と背景を解説
@@ -133,11 +138,13 @@ cat README.md
 ```
 
 各ディレクトリには以下が含まれています：
+
 - **README.md**: 学習ガイドとハンズオン演習
 - **exercises.md**: 演習メモ用テンプレート
 - **commands-log.sh**: 実行コマンド集
 
 **Claude Code に質問しながら進めることを推奨します：**
+
 - 「このコマンドの各オプションの意味を教えてください」
 - 「パーティショニングの概念を詳しく説明してください」
 - 「今学んだ内容を復習したいです」
@@ -183,6 +190,7 @@ cd ../../phase2-analytics/09-advanced-sql
 **データセット**: `YOUR_PROJECT_ID.learning_dev`
 
 セットアップ後に以下が利用可能：
+
 - `events` - イベントデータ（2024年1月、10万件）
 - `orders` - 注文データ（2024年1月）
 - `order_items` - 注文明細（2024年1月）
@@ -217,6 +225,7 @@ bq query --use_legacy_sql=false \
 ```
 
 **結果を確認したら Claude に質問：**
+
 ```
 このクエリの結果から何が分かりますか？
 traffic_source ごとのセッション数の違いから、
@@ -226,6 +235,7 @@ traffic_source ごとのセッション数の違いから、
 ### 2-3日目: Phase 0-01, 02（GCP CLI, BigQuery基礎）
 
 **Claude に学習開始を伝える：**
+
 ```
 Phase 0-01 から学習を開始します。
 GCP CLI の基本から教えてください。
@@ -239,6 +249,7 @@ cd phase0-preparation/01-gcp-cli
 ```
 
 **各コマンドの意味を Claude に質問しながら実行してください：**
+
 ```
 bq query コマンドの --dry_run オプションについて教えてください。
 なぜコスト確認が重要なのですか？
@@ -249,6 +260,7 @@ bq query コマンドの --dry_run オプションについて教えてくださ
 概念理解中心のフェーズ。実際のコードは少なめ。
 
 **Claude に概念の説明を求める：**
+
 ```
 3層アーキテクチャ（Raw/Staging/Mart）について、
 なぜこの3層に分けるのか、それぞれの役割とともに説明してください。
@@ -257,6 +269,7 @@ bq query コマンドの --dry_run オプションについて教えてくださ
 ### Week 2以降: Phase 1（dbt）
 
 **Claude に dbt の概念を質問：**
+
 ```
 dbt とは何ですか？なぜデータ変換に使うのですか？
 従来のETLとの違いを教えてください。
@@ -269,6 +282,7 @@ cd phase1-integration/06-dbt
 ```
 
 **dbt モデル実行時も Claude に質問：**
+
 ```
 この dbt モデルで ref() 関数を使っていますが、
 これはどういう意味ですか？依存関係の管理とどう関係しますか？
@@ -277,6 +291,7 @@ cd phase1-integration/06-dbt
 ### Week 3以降: Phase 2（高度なSQL）
 
 **Claude に SQL の解説を求める：**
+
 ```
 このLTV計算のSQLを見ています。
 各CTEの役割と、WINDOW関数の使い方を説明してください。
@@ -292,6 +307,7 @@ cd phase2-analytics/09-advanced-sql
 ### 日次ログ
 
 **Claude に学習ログの作成を依頼：**
+
 ```
 今日の学習内容をまとめたいです。
 learning-log/ に今日の日付でログを作成してください。
@@ -307,6 +323,7 @@ vim learning-log/$(date +%Y-%m-%d).md
 ### 進捗チェックリスト
 
 **Claude に進捗の更新を依頼：**
+
 ```
 今日完了した Phase 0-01 と Phase 0-02 を
 learning-progress.md でチェック済みにしてください。

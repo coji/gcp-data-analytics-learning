@@ -3,6 +3,7 @@
 ## 演習1: 初めてのTerraformプロジェクト
 
 ### 実行日時
+
 YYYY-MM-DD HH:MM
 
 ### terraform init の実行
@@ -13,6 +14,7 @@ terraform init
 ```
 
 **出力結果**:
+
 ```
 # ここに出力を記録
 ```
@@ -20,29 +22,34 @@ terraform init
 ### terraform plan の実行
 
 **実行結果サマリー**:
+
 - 作成されるリソース数:
 - 変更されるリソース数:
 - 削除されるリソース数:
 
 **詳細**:
+
 ```
 # plan の出力結果
 ```
 
 ### terraform apply の実行
 
-**作成されたリソース**:
--
+**作成されたリソース**
+
+- （記入してください）
 
 **BigQueryでの確認結果**:
+
 ```bash
 bq show PROJECT:DATASET
 ```
 
 ### terraform destroy の実行
 
-**削除されたリソース**:
--
+**削除されたリソース**
+
+- （記入してください）
 
 ---
 
@@ -51,20 +58,20 @@ bq show PROJECT:DATASET
 ### 作成したファイル
 
 #### variables.tf
+
 ```hcl
 # ここにコードを記録
 ```
 
 #### terraform.tfvars
+
 ```hcl
 # ここに設定を記録（機密情報は除く）
 ```
 
 ### 実行結果
 
-
 ### 変数を使うメリット
-
 
 ---
 
@@ -72,9 +79,7 @@ bq show PROJECT:DATASET
 
 ### 作成したサービスアカウント名
 
-
 ### 付与した権限
-
 
 ### Terraformコード
 
@@ -90,19 +95,15 @@ bq show PROJECT:DATASET
 
 ### GCPコンソールでの確認
 
-
 ---
 
 ## 課題1: Terraformのメリットを3つ挙げる
 
-### メリット1:
+### メリット1
 
+### メリット2
 
-### メリット2:
-
-
-### メリット3:
-
+### メリット3
 
 ---
 
@@ -125,7 +126,6 @@ bq show PROJECT:DATASET
 
 ### plan出力の読み方について学んだこと
 
-
 ---
 
 ## 課題3: 複数リソースの管理
@@ -133,11 +133,13 @@ bq show PROJECT:DATASET
 ### 作成したTerraformコード
 
 #### main.tf
+
 ```hcl
 # データセット2つの定義
 ```
 
 #### service-account.tf
+
 ```hcl
 # サービスアカウントと権限の定義
 ```
@@ -180,15 +182,10 @@ gcloud iam service-accounts list
 
 ### Infrastructure as Codeのメリット
 
-
 ### 実際に使ってみての感想
-
 
 ### 注意すべきポイント（tfstate管理など）
 
-
 ### 本番環境での利用時の考慮事項
 
-
 ### まだ理解が不十分なこと
-

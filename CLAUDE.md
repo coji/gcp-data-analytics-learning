@@ -23,12 +23,14 @@ Or create a persistent learning output style configuration (see `learning-mode-g
 ### Why Learning Mode?
 
 This repository contains:
+
 - **Educational content**: Step-by-step tutorials and hands-on exercises
 - **Conceptual explanations**: 3-layer architecture, dbt patterns, LTV calculations
 - **Practice-oriented**: Users need detailed explanations while executing commands
 - **Progressive complexity**: From basic GCP CLI to advanced SQL and dbt
 
 Claude Code should:
+
 - Provide detailed explanations for each concept
 - Break down complex topics into digestible pieces
 - Suggest related readings and resources
@@ -42,16 +44,19 @@ Claude Code should:
 This repository contains learning materials written in Japanese for data engineering:
 
 ### Documentation
+
 - `GETTING-STARTED.md` - Quick start guide (5 minutes to begin)
 - `multi-account-setup.md` - Multiple GCP account management guide
 - `sample-data-guide.md` - Guide for using BigQuery public dataset (thelook_ecommerce)
 
 ### Setup Scripts
+
 - `switch-to-learning.sh` - Switch to learning configuration (creates if not exists)
 - `quickstart-sample-data.sh` - Quick test with sample queries
 - `setup-learning-data.sh` - Setup learning dataset (copies data to your project)
 
 ### Utility Files
+
 - `.aliases.example` - Bash/Zsh aliases for quick configuration switching
 
 ## Key Technologies Covered
@@ -129,6 +134,7 @@ This repository assumes users may be working with multiple GCP accounts/projects
 ### Workflow with Multiple Accounts
 
 Users should:
+
 1. Create a dedicated `learning-gcp` configuration for this repository
 2. Switch to learning configuration before running scripts: `../scripts/switch-to-learning.sh`
 3. All setup scripts display current configuration/account/project before execution
@@ -316,6 +322,7 @@ END) AS revenue_7d
 ## Learning Progression
 
 The recommended learning timeline is:
+
 1. **Week 1-2**: GCP CLI, BigQuery basics, IAM
 2. **Week 3-4**: dbt fundamentals and practice
 3. **Week 5-6**: AppsFlyer, data integration tools
@@ -326,6 +333,7 @@ The recommended learning timeline is:
 ### Before Starting: Set Learning Mode
 
 **CRITICAL**: Ensure learning output style is active:
+
 ```
 /output-style learning
 ```
@@ -337,6 +345,7 @@ When working with this repository:
    - Learning mode should be providing detailed educational explanations
 
 2. **Switch to learning configuration** (if using multiple accounts):
+
    ```bash
    ../scripts/switch-to-learning.sh
    # or
@@ -344,6 +353,7 @@ When working with this repository:
    ```
 
 3. **Verify current settings** before running scripts:
+
    ```bash
    gcloud config list
    # Check: account, project
@@ -370,13 +380,16 @@ When working with this repository:
 If the user is working with multiple GCP accounts:
 
 1. **Set up Claude Code learning mode**:
+
    ```
    /output-style learning
    ```
+
    - This ensures Claude provides educational explanations
    - See `learning-mode-guide.md` for persistent configuration
 
 2. **First time setup**:
+
    ```bash
    # Run the helper script (will create configuration if needed)
    ../scripts/switch-to-learning.sh
@@ -387,6 +400,7 @@ If the user is working with multiple GCP accounts:
    ```
 
 3. **Daily workflow**:
+
    ```bash
    # Switch to learning
    ../scripts/switch-to-learning.sh
@@ -408,28 +422,33 @@ If the user is working with multiple GCP accounts:
 When in learning mode, Claude Code should:
 
 ### Explaining Concepts
+
 - Start with high-level overview before diving into details
 - Use analogies to connect GCP concepts to familiar ideas
 - Explain the "why" behind architectural decisions
 - Relate new concepts to previous lessons
 
 ### Guiding Hands-On Practice
+
 - Provide step-by-step instructions with expected outputs
 - Explain each command before execution
 - Review and interpret command outputs
 - Suggest variations for deeper understanding
 
 ### Progress Tracking
+
 - Reference `learning-progress.md` to check completed topics
 - Suggest next logical steps based on progress
 - Review previous concepts before introducing new ones
 
 ### Problem Solving
+
 - When errors occur, explain root causes educationally
 - Guide troubleshooting with learning objectives in mind
 - Connect error messages to underlying concepts
 
 ### Assessment
+
 - Ask comprehension questions periodically
 - Suggest exercises to reinforce learning
 - Encourage documentation in `learning-log/` and `exercises.md` files

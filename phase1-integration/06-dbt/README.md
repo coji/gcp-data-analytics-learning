@@ -113,6 +113,7 @@ mkdir -p models/staging
 ```
 
 `models/staging/_sources.yml`:
+
 ```yaml
 version: 2
 
@@ -126,6 +127,7 @@ sources:
 ```
 
 `models/staging/stg_test_ads.sql`:
+
 ```sql
 {{
   config(
@@ -155,6 +157,7 @@ bq query --use_legacy_sql=false \
 ### 演習3: インクリメンタルモデル
 
 `models/staging/stg_ads_incremental.sql`:
+
 ```sql
 {{
   config(
@@ -190,6 +193,7 @@ dbt run --models stg_ads_incremental
 ### 演習4: データ品質テスト
 
 `models/staging/_schema.yml`:
+
 ```yaml
 version: 2
 

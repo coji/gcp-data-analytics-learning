@@ -30,6 +30,7 @@
 - [ ] **演習課題3**: テストデータセット作成とサンプルテーブルコピー
 
 **学習リソース**:
+
 - [ ] [gcloud CLIの概要](https://cloud.google.com/sdk/gcloud)を読む
 - [ ] [bqコマンドリファレンス](https://cloud.google.com/bigquery/docs/bq-command-line-tool)を読む
 
@@ -49,6 +50,7 @@
 - [ ] **演習課題3**: パーティションフィルタの有無でスキャン量比較
 
 **学習リソース**:
+
 - [ ] [パーティション分割テーブル](https://cloud.google.com/bigquery/docs/partitioned-tables)を読む
 - [ ] [クラスター化テーブル](https://cloud.google.com/bigquery/docs/clustered-tables)を読む
 - [ ] [BigQuery IAM](https://cloud.google.com/bigquery/docs/access-control)を読む
@@ -67,6 +69,7 @@
 - [ ] **演習課題3**: `mart_creative_performance.sql`のビジネスロジック説明
 
 **学習リソース**:
+
 - [ ] [dbt Labs - Best practices for data modeling](https://docs.getdbt.com/guides/best-practices/how-we-structure/1-guide-overview)を読む
 - [ ] 学習ロードマップの「3層アーキテクチャ詳細」セクションを熟読
 
@@ -84,6 +87,7 @@
 - [ ] **演習課題3**: セキュリティリスクの考察
 
 **学習リソース**:
+
 - [ ] [サービスアカウントの概要](https://cloud.google.com/iam/docs/service-accounts)を読む
 - [ ] [BigQuery IAMロール](https://cloud.google.com/bigquery/docs/access-control)を読む
 - [ ] [IAM best practices](https://cloud.google.com/iam/docs/best-practices-service-accounts)を読む
@@ -104,6 +108,7 @@
 - [ ] **演習課題3**: サービスアカウント作成のTerraformコード作成
 
 **学習リソース**:
+
 - [ ] [Terraform - Get Started with Google Cloud](https://developer.hashicorp.com/terraform/tutorials/gcp-get-started)を完了
 - [ ] 学習ロードマップの「Terraformによるインフラ管理」セクションを読む
 
@@ -130,6 +135,7 @@
 - [ ] **演習課題4**: インクリメンタルモデル作成と差分処理確認
 
 **学習リソース**:
+
 - [ ] [dbt Learn - dbt Fundamentals](https://learn.getdbt.com/courses/dbt-fundamentals)を完了（必修）
 - [ ] [dbt Documentation](https://docs.getdbt.com/docs/introduction)を読む
 
@@ -147,6 +153,7 @@
 - [ ] **演習課題4**: 検証SQLクエリの理解
 
 **学習リソース**:
+
 - [ ] [AppsFlyer - PBA Overview](https://support.appsflyer.com/hc/en-us/articles/360001294118)を読む
 - [ ] [AppsFlyer - Web SDK Integration](https://dev.appsflyer.com/hc/docs/web-sdk)を読む
 - [ ] [AppsFlyer - Data Locker](https://support.appsflyer.com/hc/en-us/articles/360011596839)を読む
@@ -165,6 +172,7 @@
 - [ ] **実践**: Databeatトライアル申し込みとテスト（任意）
 
 **学習リソース**:
+
 - [ ] [Databeat公式サイト](https://databeat.io/)を確認
 - [ ] [Fivetran公式ドキュメント](https://fivetran.com/docs)を確認
 
@@ -186,6 +194,7 @@
 - [ ] **演習課題3**: `EXPLAIN`で実行計画確認とパフォーマンス改善
 
 **学習リソース**:
+
 - [ ] [Mode Analytics - SQL Tutorial](https://mode.com/sql-tutorial/)を完了
 - [ ] 「ビッグデータ分析・活用のためのSQLレシピ」を読む（推奨）
 
@@ -200,6 +209,7 @@
 - [ ] **演習課題**: Looker Studioで同じダッシュボード作成と比較
 
 **学習リソース**:
+
 - [ ] [Metabase公式ドキュメント](https://www.metabase.com/docs/latest/)を読む
 - [ ] [Metabase - BigQuery連携](https://www.metabase.com/docs/latest/administration-guide/databases/bigquery.html)を読む
 - [ ] [Looker Studio - BigQuery連携](https://support.google.com/looker-studio/answer/6370296)を読む
@@ -214,6 +224,7 @@
 - [ ] **演習課題2**: サンプルジョブ作成と手動実行
 
 **学習リソース**:
+
 - [ ] [Cloud Scheduler - Quickstart](https://cloud.google.com/scheduler/docs/quickstart)を読む
 
 ---
@@ -227,6 +238,7 @@
 - [ ] **演習課題2**: dbtテスト失敗時のSlack通知調査
 
 **学習リソース**:
+
 - [ ] [Datadog - BigQuery Integration](https://docs.datadoghq.com/integrations/google_cloud_big_query/)を読む
 - [ ] [Cloud Monitoring - Quickstart](https://cloud.google.com/monitoring/docs/quickstart)を読む
 

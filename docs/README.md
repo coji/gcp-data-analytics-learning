@@ -55,7 +55,6 @@
 
 ### 詳細を学びたい方
 
-
 ### Claude Code開発者
 
 - [CLAUDE.md](CLAUDE.md) - 技術仕様と対話ガイドライン

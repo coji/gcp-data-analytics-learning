@@ -3,27 +3,33 @@
 ## 演習1: パーティション分割テーブルの作成
 
 ### 実行日時
+
 YYYY-MM-DD HH:MM
 
 ### 作成したテーブル
+
 `PROJECT:DATASET.TABLE`
 
 ### パーティションフィルタありのスキャン量
+
 ```
 This query will process X bytes when run.
 ```
 
 ### パーティションフィルタなしのスキャン量
+
 ```
 This query will process Y bytes when run.
 ```
 
 ### スキャン量の比較
+
 - フィルタあり: X bytes
 - フィルタなし: Y bytes
 - **削減率**: ((Y-X)/Y) * 100 = Z%
 
 ### 学んだこと
+
 -
 -
 
@@ -45,7 +51,6 @@ This query will process Y bytes when run.
 
 ### データセットのアクセス権限
 
-
 ---
 
 ## 課題1: パーティション・クラスタリング設定の理解
@@ -54,16 +59,13 @@ This query will process Y bytes when run.
 
 回答:
 
-
 ### なぜ`account_id, campaign_id`でクラスタリングしているのか？
 
 回答:
 
-
 ### `partition_expiration_days = 90`の意図は？
 
 回答:
-
 
 ---
 
@@ -71,9 +73,7 @@ This query will process Y bytes when run.
 
 ### 作成したデータセット名
 
-
 ### 作成したテーブル名
-
 
 ### テーブル定義
 
@@ -140,19 +140,14 @@ LIMIT 100;
 
 ### 考察
 
-
 ---
 
 ## 全体を通しての気づき
 
 ### パーティショニングについて
 
-
 ### クラスタリングについて
-
 
 ### コスト削減のポイント
 
-
 ### まだ理解が不十分なこと
-

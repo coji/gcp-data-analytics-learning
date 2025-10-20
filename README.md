@@ -23,6 +23,7 @@
 - **[multi-account-setup.md](./docs/multi-account-setup.md)** - 🔄 **複数GCPアカウントの切り替え方法**
 - **[sample-data-guide.md](./docs/sample-data-guide.md)** - 学習用オープンデータの使い方（BigQuery公開データセット）
 - **[CLAUDE.md](./docs/CLAUDE.md)** - Claude Code用の技術ガイド
+- **[DEVELOPMENT.md](./docs/DEVELOPMENT.md)** - 開発者向けガイド（Markdownlint等）
 
 ## 🎯 学習目標
 
@@ -84,6 +85,7 @@ gcloud/
 ```
 
 学習モードでは：
+
 - 詳細な概念説明
 - 段階的な学習サポート
 - ハンズオン演習の丁寧なガイド
@@ -96,6 +98,7 @@ gcloud/
 1. GCPアカウントの作成（無料トライアルあり）
 
 2. gcloud CLIのインストール
+
    ```bash
    # macOSの場合
    brew install --cask google-cloud-sdk
@@ -104,6 +107,7 @@ gcloud/
 3. **GCP設定**
 
    **複数アカウント使用時（推奨）**:
+
    ```bash
    # 学習用configurationを作成
    gcloud config configurations create learning-gcp
@@ -117,12 +121,14 @@ gcloud/
    詳細: [multi-account-setup.md](./docs/multi-account-setup.md)
 
    **シンプルな設定**:
+
    ```bash
    gcloud auth login
    gcloud config set project YOUR_PROJECT_ID
    ```
 
 4. **クイックスタート（サンプルデータで動作確認）**
+
    ```bash
    # 学習用設定に切り替え（複数アカウント使用時）
    ./scripts/switch-to-learning.sh
@@ -139,12 +145,14 @@ gcloud/
 **Phase 0から順番に学習することを推奨します：**
 
 1. **Claude Code に学習開始を伝える**
+
    ```
    Phase 0-01 から学習を開始したいです。
    基礎から丁寧に説明してください。
    ```
 
 2. **各フェーズのディレクトリに移動**
+
    ```bash
    cd phase0-preparation/01-gcp-cli
    ```
@@ -158,6 +166,7 @@ gcloud/
    - `commands-log.sh`に実行したコマンドを保存
 
 5. **理解を確認**
+
    ```
    今学んだパーティショニングの概念を、自分の言葉で説明してみます。
    [説明]
@@ -165,6 +174,7 @@ gcloud/
    ```
 
 6. **学習ログを記録**
+
    ```
    今日の学習内容を learning-log/ にまとめたいです。
    サマリーを作成してください。

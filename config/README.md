@@ -13,21 +13,25 @@ GCP学習用のシェルエイリアス設定例。
 **含まれるエイリアス**:
 
 #### gcloud configuration切り替え
+
 - `gcloud-learning` - 学習用configurationに切り替え
 - `gcloud-client-a` - クライアントA用に切り替え（コメントアウト）
 - `gcloud-client-b` - クライアントB用に切り替え（コメントアウト）
 
 #### 現在の設定確認
+
 - `gcloud-current` - 現在のgcloud設定を表示
 - `gcloud-list` - すべてのconfiguration一覧
 - `gcloud-whoami` - アクティブなアカウントを確認
 - `gcloud-project` - アクティブなプロジェクトを確認
 
 #### BigQuery便利コマンド
+
 - `bq-datasets` - 現在のプロジェクトのデータセット一覧
 - `bq-learning` - learning_devデータセットのテーブル一覧
 
 #### 学習用クイックスタート（コメントアウト）
+
 - `cdgcp` - 学習用ディレクトリに移動
 - `gcp-setup` - 学習用設定に切り替えてセットアップ
 

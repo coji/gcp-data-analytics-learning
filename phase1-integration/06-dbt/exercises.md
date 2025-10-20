@@ -3,6 +3,7 @@
 ## dbt Fundamentalsコース
 
 ### 完了日
+
 YYYY-MM-DD
 
 ### 学んだ主要な概念
@@ -13,13 +14,11 @@ YYYY-MM-DD
 
 ### 印象に残ったポイント
 
-
 ---
 
 ## 演習1: dbtプロジェクトの作成
 
 ### プロジェクト名
-
 
 ### dbt debugの結果
 
@@ -32,7 +31,6 @@ YYYY-MM-DD
 ## 演習2: 初めてのdbtモデル
 
 ### 作成したモデル名
-
 
 ### モデルのSQL
 
@@ -47,6 +45,7 @@ dbt run --models stg_test_ads
 ```
 
 **結果**:
+
 ```
 # 出力結果
 ```
@@ -57,7 +56,6 @@ dbt run --models stg_test_ads
 
 ### 作成したモデル名
 
-
 ### 初回実行
 
 **処理されたレコード数**:
@@ -67,7 +65,6 @@ dbt run --models stg_test_ads
 **処理されたレコード数**:
 
 ### 学んだこと
-
 
 ---
 
@@ -91,12 +88,9 @@ dbt run --models stg_test_ads
 
 ### なぜmodelsを`staging/`と`marts/`に分けるのか？
 
-
 ### `_sources.yml`の役割は？
 
-
 ### `dbt_project.yml`の主要設定項目
-
 
 ---
 
@@ -104,22 +98,17 @@ dbt run --models stg_test_ads
 
 ### `config()`の各オプションの意味
 
-
 ### `{{ dbt_utils.generate_surrogate_key() }}`の役割
-
 
 ### `SAFE_DIVIDE()`を使う理由
 
-
 ### インクリメンタル処理の仕組み
-
 
 ---
 
 ## 課題4: 自分で作成したインクリメンタルモデル
 
 ### モデル名
-
 
 ### SQL
 
@@ -140,12 +129,8 @@ dbt run --models stg_test_ads
 
 ### dbtの強力な機能
 
-
 ### 従来のSQLワークフローとの違い
-
 
 ### 実際のプロジェクトで活用したいこと
 
-
 ### まだ理解が不十分なこと
-
