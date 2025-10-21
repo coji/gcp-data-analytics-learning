@@ -95,7 +95,7 @@ gcloud iam service-accounts delete \
 
 ### 課題1: 権限設計の意図を説明
 
-学習ロードマップの「IAM・セキュリティ設計」（917-966行目）を読み、以下を`exercises.md`に説明してください：
+学習ロードマップの「IAM・セキュリティ設計」（917-966行目）を読み、以下を`learning-log/YYYY-MM-DD.md`に説明してください：
 
 1. なぜDatabeatには「Raw Layerへの書き込み」のみを許可しているのか？
 2. なぜdbtは「Rawの読み取り」と「Staging/Martの書き込み」が必要なのか？

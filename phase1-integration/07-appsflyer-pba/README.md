@@ -24,7 +24,7 @@ WebとAppのユーザー行動を統合して分析する機能。Customer User 
 
 ### 課題1: PBA導入手順の理解
 
-学習ロードマップを読み、`notes.md`にステップバイステップでまとめてください。
+学習ロードマップを読み、`learning-log/YYYY-MM-DD.md`にステップバイステップでまとめてください。
 
 ### 課題2: Customer User IDの重要性
 

@@ -13,7 +13,7 @@
 
 ### 課題: DatabeatとFivetranの比較
 
-`comparison.md`に以下を調査・記録：
+`learning-log/YYYY-MM-DD.md`に以下を調査・記録：
 
 1. コストの違い
 2. サポート体制

@@ -66,7 +66,7 @@ gcloud config set project YOUR_PROJECT_ID
 gcloud config list
 ```
 
-**結果を `exercises.md` に記録してください**
+**結果を `learning-log/YYYY-MM-DD.md` に記録してください**
 
 ### 演習2: BigQueryデータセットの操作
 
@@ -160,7 +160,7 @@ bq query --use_legacy_sql=false \
 
 ## 📝 演習課題
 
-以下の課題を `exercises.md` に記録してください：
+以下の課題を `learning-log/YYYY-MM-DD.md` に記録してください：
 
 ### 課題1: データセットの調査
 

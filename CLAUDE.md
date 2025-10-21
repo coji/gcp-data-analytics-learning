@@ -165,6 +165,16 @@ This repository is documentation-focused, but here are common commands for the t
 
 ### BigQuery CLI (bq)
 
+**IMPORTANT: Configure `.bigqueryrc` first to avoid repeating `--use_legacy_sql=false`**
+
+```bash
+# One-time setup: Create ~/.bigqueryrc
+echo '[query]' > ~/.bigqueryrc
+echo 'use_legacy_sql = false' >> ~/.bigqueryrc
+```
+
+After this setup, you can omit `--use_legacy_sql=false` from all `bq query` commands.
+
 ```bash
 # List datasets
 bq ls --project_id=PROJECT_ID
@@ -172,8 +182,8 @@ bq ls --project_id=PROJECT_ID
 # Show table schema
 bq show --schema --format=prettyjson PROJECT_ID:dataset.table
 
-# Run query
-bq query --use_legacy_sql=false 'SELECT * FROM `project.dataset.table` LIMIT 10'
+# Run query (no --use_legacy_sql=false needed with .bigqueryrc)
+bq query 'SELECT * FROM `project.dataset.table` LIMIT 10'
 
 # Create dataset
 bq mk --dataset --location=asia-northeast1 PROJECT_ID:dataset_name
@@ -430,16 +440,31 @@ When in learning mode, Claude Code should:
 
 ### Guiding Hands-On Practice
 
+- **Present ONE task at a time** - Do not overwhelm with multiple commands
+- **Let the user execute commands** - Only provide the command text, don't execute it yourself
 - Provide step-by-step instructions with expected outputs
-- Explain each command before execution
-- Review and interpret command outputs
+- Explain each command before the user executes it
+- Review and interpret command outputs after the user shares results
 - Suggest variations for deeper understanding
 
-### Progress Tracking
+### Learning Notes and Progress Tracking
 
+**IMPORTANT: Where to save learning notes**
+
+- **Use `learning-log/YYYY-MM-DD.md`** for daily learning logs
+- **Do NOT use individual `exercises.md` or `notes.md`** files in phase directories
+- The `personal` branch is for personal learning, so `learning-log/*.md` files are tracked in Git
 - Reference `learning-progress.md` to check completed topics
 - Suggest next logical steps based on progress
 - Review previous concepts before introducing new ones
+
+**Files to avoid creating**:
+
+- `phase*/exercises.md` (use `learning-log/` instead)
+- `phase*/notes.md` (use `learning-log/` instead)
+- Individual scattered note files (consolidate in `learning-log/`)
+
+This keeps the repository clean and all learning materials in one organized location.
 
 ### Problem Solving
 

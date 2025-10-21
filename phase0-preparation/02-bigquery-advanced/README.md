@@ -105,7 +105,7 @@ bq query --use_legacy_sql=false --dry_run \
   'SELECT * FROM `YOUR_PROJECT_ID.learning_dev.test_ads_report`'
 ```
 
-**スキャン量の違いを `exercises.md` に記録してください**
+**スキャン量の違いを `learning-log/YYYY-MM-DD.md` に記録してください**
 
 ### 演習2: IAM権限の確認
 
@@ -133,7 +133,7 @@ gcloud projects get-iam-policy YOUR_PROJECT_ID \
 2. なぜ`account_id, campaign_id`でクラスタリングしているのか？
 3. `partition_expiration_days = 90`の意図は？
 
-**回答を `exercises.md` に記録してください**
+**回答を `learning-log/YYYY-MM-DD.md` に記録してください**
 
 ### 課題2: 自分のパーティション分割テーブル作成
 

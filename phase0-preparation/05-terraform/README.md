@@ -183,7 +183,7 @@ resource "google_bigquery_dataset_iam_member" "sa_viewer" {
 
 ### 課題1: Terraformのメリットを3つ挙げる
 
-学習ロードマップの「Terraformによるインフラ管理」（967-1117行目）を読み、`exercises.md`にメリットを3つ挙げてください。
+学習ロードマップの「Terraformによるインフラ管理」（967-1117行目）を読み、`learning-log/YYYY-MM-DD.md`にメリットを3つ挙げてください。
 
 ### 課題2: terraform planの理解
 
